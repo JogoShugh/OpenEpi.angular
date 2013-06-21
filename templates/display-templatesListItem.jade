@@ -1,0 +1,6 @@
+each templateModule, index in templateModules
+  title = templateModule.module.titleShort
+  li(data-theme='d', data-index=index).templateModule
+    a(href="#", data-index=index)
+      span=templateModule.templateName
+        span(style='font-size:80%;color:#555555;')='&nbsp;' + "( " + templateModule.module.titleShort + " @ " + templateModule.dateTime + " )"

@@ -1,0 +1,7 @@
+<configuration>
+ <system.webServer>
+   <staticContent>
+     <mimeMap fileExtension=".jade" mimeType="text/x-jade" />
+   </staticContent>
+ </system.webServer>
+</configuration>

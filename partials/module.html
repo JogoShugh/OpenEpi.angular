@@ -1,0 +1,44 @@
+<div class='module'>
+    <h3>{{module.title}}</h3>
+    <tabs>
+        <pane heading='Enter'>
+            <div class='fields'>
+                <div class='control-group' ng-repeat='(name, field) in module.inputFields'>
+                    <label class='control-label required' for='{{name}}'>{{field.label}}</label>
+                    <div class='controls'>
+                        <input ng-model='module.model[name]' class='input-xlarge' required type='text' value='getDefaultValue(module)'>
+                    </div>
+                </div>
+                <button class='btn btn-primary' ng-click='calculate()'>Calculate</button>
+                &nbsp;
+                <button class='btn' ng-click='clear()'>Clear</button>
+            </div>
+        </pane>
+        <pane heading='Results' active='result.resultPaneActive'>
+            <h4>{{result.heading}}</h4>
+            <div ng-show='hasResult' class='responsiveTable'>
+                <table class='table table-bordered'>
+                    <thead>
+                        <tr style='background:lightgray;'>
+                            <th ng-repeat='value in result.columns'>{{value}}</th>
+                        </tr>
+                    </thead>
+                    <tr ng-repeat='row in result.rows'>
+                        <td ng-repeat='(i, item) in row' data-title="{{result.columns[i] + ':'}}">
+                            <span style='color:#333333;'>{{item}}</span>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </pane>
+        <pane heading="Examples">
+            TODO
+        </pane>
+        <pane heading='Credits'>
+            <div ng-repeat='(category, authors) in module.authors'>
+                <h4>{{category}}</h4>
+                <span ng-bind-html-unsafe='authors'></span>
+            </div>
+        </pane>
+    </tabs>
+</div>

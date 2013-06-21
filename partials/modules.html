@@ -1,0 +1,21 @@
+<div class="moduleList">
+    <h3 class='header'>OpenEpi.com Modules</h3>&nbsp;<input placeholder='Filter by title or tag' type='text' ng-model='filterTitle' />
+    <br />
+    <div style='backgroundd: #eed3d7' class='well'>
+        <div ng-repeat='module in modules.allModules()' class='moduleItem' ng-show='moduleFilter(module, filterTitle)' ng-init='detailsShown = false'>
+            <h3 class='moduleTitle'>{{module.title}}</h3>
+            {{module.summary}}
+            <br />
+            <span ng-repeat='tag in module.tags' class='label tag'>{{tag}}</span>
+            <br />
+            <a class='btn btn-mini btn-primary' ng-click='moduleLoad(module.name)'>Load</a>&nbsp;<a class='btn btn-mini' ng-click='detailsShown = !detailsShown'>
+            {{detailsTitle(detailsShown)}}</a>
+            <div ng-show='detailsShown' class='description'>
+                <p>
+                {{module.description}}
+                </p>
+            </div>
+            <hr size='3' />
+        </div>
+    </div>
+</div>

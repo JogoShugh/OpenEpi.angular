@@ -1,0 +1,81 @@
+doctype 5
+html(lang='en')
+  head
+    title OpenEpi -- Epidemiologic Calculators
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    meta(content='text/html;charset=utf-8', http-equiv='Content-Type')
+    meta(content='utf-8', http-equiv='encoding')
+    link(href='content/jquery.mobile-1.2.0.min.css', rel='stylesheet')
+    link(href='content/toastr.css', rel='stylesheet')
+    link(href='content/app.css', rel='stylesheet')    
+    script(src='scripts/require.js', type='text/javascript', data-main='scripts/main')  
+  
+  body(style='background:#ffffff')
+    div#bodyDiv(style='visibility:hidden')
+      div(data-role='page', id='splash')
+        div(data-role='content', style='text-align:center;background:#ffffff;height:100%;')
+          div
+            img(src='content/images/logo.png', style="width:209px;height:55px")
+          div
+            img(src='content/images/splash.png', style="width:216px;height:287px")
+
+      div(data-role='page', id='home')
+        include homeHeader
+        div(data-role='content', data-theme='b', id='moduleSelector')
+        include homeFooter
+
+      div(data-role='page', id='templates')
+        include homeHeader
+        div(data-role='content', data-theme='b', id='templateModules')
+        include moduleFooter
+
+      div(data-role='page', id='module')
+        include moduleHeader
+        div(data-role='content')
+          div#moduleTitle(style='font-size:125%;font-weight:bold;')
+          br
+          div#fieldContainer(data-role='collapsible', data-collapsed='false', data-inset="false", data-theme='b', data-content-theme='d')
+            h3 
+              span Input
+            div.fields
+            fieldset.ui-grid-b
+              div.ui-block-a
+                a(href='#', data-role='button', data-icon='arrow-r', class='calculate') Calculate
+              div.ui-block-b
+                a(href='#saveTemplatePopup', data-role='button', data-rel="popup", data-icon='arrow-r', class='saveTemplate') Save Template
+              div.ui-block-c
+                a(href='#', data-role='button', data-icon='arrow-u', class='clear') Clear
+
+            div(data-role='popup', id='saveTemplatePopup', data-theme='a', class='ui-corner-all', data-overlay-theme='a')
+              a(href="#", data-rel="back", data-role="button", data-theme="a", data-icon="delete", data-iconpos="notext", class="ui-btn-right") Close
+              form
+                div(style="padding:10px 20px;")
+                  h3 Save Template
+                    label(for="templateName", class="ui-hidden-accessible") Template Name:
+                    input(type="text", name="templateName", id="templateName", value="", placeholder="template name", data-theme="a")
+                    a(href='#', data-role='button', data-theme='b', class='templateSave') Save
+          
+          #moduleInfo(data-role='collapsible', data-theme='d', data-inset="false", data-content-theme='e')
+            h3 Info
+            b#moduleSummary
+            p
+            #moduleDescription
+            p
+            h4 Authors
+            #moduleAuthors
+        include moduleFooter
+
+      div(data-role='page', id='results')
+        include moduleHeader
+        div(data-role='content')
+          div#resultsMissing No results yet...
+          #resultsPane
+            span#processing 
+              b (Processing...)
+            span#resultData(style='font-weight:bold;font-style:italics')
+        include moduleFooter
+
+      div(data-role='page', id='history')
+        include moduleHeader
+        div(data-role='content', data-theme='b', id='historyListContainer')
+        include moduleFooter

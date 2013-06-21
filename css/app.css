@@ -1,0 +1,98 @@
+/* app css stylesheet */
+
+@media (max-width: 767px) {
+    body {
+        padding-right: 0px;
+        padding-left: 0px;
+    }
+}
+
+.content {
+    margin-left: .5em;
+    margin-right: .5em;
+}
+
+.required {
+  font-weight: bold;
+}
+
+.header {
+    padding-top: 0;
+    margin-top: 0;
+    display: inline;
+}
+
+.btn {
+  margin-top: .5em;
+}
+
+.btn span {
+  vertical-align: middle;
+}
+
+.moduleTitle {
+    margin-bottom: .1em;
+}
+
+.description {
+    padding-top: .5em;
+    color: #666666;
+}
+
+.tag {
+    margin-right: .3em;
+}
+
+.navbar {
+    margin-bottom: 0.1em;
+}
+
+@media only screen and (max-width: 767px) {
+
+    /* Force table to not be like tables anymore */
+    .responsiveTable table,
+    .responsiveTable thead,
+    .responsiveTable tbody,
+    .responsiveTable th,
+    .responsiveTable td,
+    .responsiveTable tr {
+        display: block;
+    }
+
+    /* Hide table headers (but not display: none;, for accessibility) */
+    .responsiveTable thead tr {
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+    }
+
+    .responsiveTable tr { border: 1px solid #ccc; }
+
+    .responsiveTable td {
+        /* Behave  like a "row" */
+        border: none;
+        border-bottom: 1px solid #eee;
+        position: relative;
+        padding-left: 50%;
+        white-space: normal;
+        text-align:left;
+    }
+
+    .responsiveTable td:before {
+        /* Now like a table header */
+        position: absolute;
+        /* Top/left values mimic padding */
+        top: 6px;
+        left: 6px;
+        width: 45%;
+        padding-right: 10px;
+        white-space: nowrap;
+        text-align:left;
+        font-weight: bold;
+    }
+
+    /*
+    Label the data
+    */
+    .responsiveTable td:before { content: attr(data-title); }
+}
