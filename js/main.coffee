@@ -4,6 +4,7 @@ require.config({
     'angular': '/app/lib/angular/angular',
     'angular-resource': '/app/lib/angular/angular-resource',
     'angular-twitter-bootstrap': '/app/lib/angular/ui-bootstrap-tpls-0.3.0'
+    'angular-grid': '/app/lib/angular/ng-grid.min'
   },
   shim: {
     'angular': {
@@ -13,6 +14,9 @@ require.config({
       deps: ['angular']
     },
     'angular-twitter-bootstrap': {
+      deps: ['angular']
+    },
+    'angular-grid': {
       deps: ['angular']
     }
     'underscore': {

@@ -2,7 +2,7 @@
     <h3 class='header'>OpenEpi.com Modules</h3>&nbsp;<input placeholder='Filter by title or tag' type='text' ng-model='filterTitle' />
     <br />
     <div style='backgroundd: #eed3d7' class='well'>
-        <div ng-repeat='module in modules.allModules()' class='moduleItem' ng-show='moduleFilter(module, filterTitle)' ng-init='detailsShown = false'>
+        <div ng-repeat='module in modules' class='moduleItem' ng-show='moduleFilter(module, filterTitle)' ng-init='detailsShown = false'>
             <h3 class='moduleTitle'>{{module.title}}</h3>
             {{module.summary}}
             <br />
@@ -18,4 +18,5 @@
             <hr size='3' />
         </div>
     </div>
+    <!-- <div class="gridStyle" ng-grid="gridOptions"></div> -->
 </div>

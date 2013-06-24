@@ -6,6 +6,7 @@
   <meta content="utf-8" http-equiv="encoding">
   <title>OpenEpi -- Epidemiologic Calculators</title>
   <link href="css/bootstrap-combined.min.css" rel="stylesheet" />
+  <link href='lib/angular/ng-grid.css' rel='stylesheet' />
   <link href="css/app.css" rel="stylesheet" />
 </head>
 <body>
@@ -22,15 +23,15 @@
             <div style='margin-top:3px' collapse="navCollapsed" class="nav-collapse collapse navbar-responsive-collapse">
                 <ul class="nav" style='margin-top:3px;'>
                     <li><a href="#" ng-click="navCollapsed = !navCollapsed"
-                                          data-target='.nav-collapse'>Home</a>
+                            data-target='.nav-collapse'>Home</a>
                     </li>
                     <li>
                         <a href="#/contribute" ng-click="navCollapsed = !navCollapsed"
-                           data-target='.nav-collapse'>Contribute</a>
+                            data-target='.nav-collapse'>Contribute</a>
                     </li>
                     <li>
                         <a href="#/about" ng-click="navCollapsed = !navCollapsed"
-                           data-target='.nav-collapse'>About</a>
+                            data-target='.nav-collapse'>About</a>
                     </li>
                 </ul>
             </div>
@@ -38,6 +39,7 @@
     </div>
   </div>
   <div class='content' ng-view></div>
+  <script src="lib/jquery.js"></script>
   <script src="lib/require.js" data-main="js/main.js"></script>
 </body>
 </html>
