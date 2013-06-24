@@ -6,8 +6,14 @@ This is a rough draft version of [OpenEpi.com](http://www.openepi.com) ported to
 
 * Install Node.js, if you don't already have it, from [http://www.nodejs.org](http://www.nodejs.org)
 * Clone or download the repository and navigate to the directory in a bash prompt
+* If you don't have CoffeeScript installed, type `npm install -g coffee-script`
 * Type `npm install` to install the dependencies
 * Run `./build.sh` to recompile the CoffeeScript (just in case I forgot to check in the JavaScript files)
 * Run `./run.sh` to run the server
 * Navigate to [http://localhost:8081/app/index.html](http://localhost:8081/app/index.html) in your browser.
 
+# CoffeeStand
+
+You can also use CoffeeStand to watch the entire folder and have it recompile coffee files when you change them.
+
+To do this type `npm install -g coffeestand`, and then either run `. ./watchCoffee.sh` or simply type `coffeestand &`.
