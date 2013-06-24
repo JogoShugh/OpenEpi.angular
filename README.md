@@ -1,6 +1,9 @@
 # Summary
 
-This is a rough draft version of [OpenEpi.com](http://www.openepi.com) ported to Twitter Bootstrap, AngularJS, and RequireJS. It's a second attempt at porting the software. The last time, I did it with Backbone and jQuery Mobile, plus about 10 other libraries that I had to add! This time, I love that so few additional libraries are needed.
+As demonstrated during the unconference day of Open Source Bridge 2013, this is a rough draft 
+version of [OpenEpi.com](http://www.openepi.com) ported to Twitter Bootstrap, AngularJS, and RequireJS. 
+It's a second attempt at porting the software. The last time, I did it with Backbone and jQuery Mobile, 
+plus about 10 other libraries that I had to add! This time, I love that so few additional libraries are needed.
 
 # How to run
 
